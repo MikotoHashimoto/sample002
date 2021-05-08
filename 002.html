@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: antiquewhite;">
+    <header>
+        <h1>四則演算</h1>
+    </header>
+    <input type="number" id="num1">
+    <select id="cal">
+        <option>+</option>
+        <option>-</option>
+        <option>×</option>
+        <option>÷</option>
+    </select>
+    <input type="number" id="num2">
+    <button id="button">=</button>
+    <span id="ans"></span>
+
+    <script>
+        var num1 = document.querySelector("#num1");
+        var num2 = document.querySelector("#num2");
+        var button = document.querySelector("#button");
+        var ans = document.querySelector("#ans");
+        var cal = document.querySelector("#cal");
+
+        function sum( aaa ) {
+            if ( aaa == "+" ) {
+                ans.innerHTML = parseFloat( num1.value ) + parseFloat( num2.value );
+            }
+            else if ( aaa == "-" ) {
+                ans.innerHTML = parseFloat( num1.value ) - parseFloat( num2.value );
+            } 
+            else if ( aaa == "×" ) {
+                ans.innerHTML = parseFloat( num1.value ) * parseFloat( num2.value );
+            }
+            else {
+                ans.innerHTML = parseFloat( num1.value ) / parseFloat( num2.value );
+            }
+        }
+
+        button.addEventListener("click", function() { sum( cal.value ) });
+    </script> 
+</body>
+</html>
