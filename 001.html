@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: antiquewhite;">
+    <header>
+        ただ足し算をするプログラム
+    </header>
+    <input type="number" id="num1">+
+    <input type="number" id="num2">
+    <button id="button">=</button>
+    <span id="ans"></span>
+
+    <script>
+        var num1 = document.querySelector("#num1");
+        var num2 = document.querySelector("#num2");
+        var button = document.querySelector("#button");
+        var ans = document.querySelector("#ans");
+
+        function sum() {
+            ans.innerHTML = parseFloat( num1.value ) + parseFloat( num2.value );
+        }
+        button.addEventListener("click", sum);
+    </script> 
+</body>
+</html>
